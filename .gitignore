@@ -3,7 +3,8 @@
 .DS_Store
 .terraform.lock.hcl
 COOP*
-2.VBA_Modules*
+*VBA_Modules*
+
 # .tfstate files
 *.tfstate
 *.tfstate.*
