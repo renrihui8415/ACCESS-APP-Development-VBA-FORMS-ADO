@@ -161,9 +161,9 @@ Public Function Get_DT() As String
 End Function
 Public Function GetAddress(a As String, i As Integer) As String
     If a = "O" And i = 0 Then
-        GetAddress = "C:\Users\Administrator\Desktop\COOP202110\Access\order data\Orders_DB.accdb"
+        GetAddress = "C:\Users\...\Orders_DB.accdb"
     Else
-        GetAddress = "C:\Users\Administrator\Desktop\COOP202110\Access\order data\OrderDetails_" & i & ".accdb"
+        GetAddress = "C:\Users\...\OrderDetails_" & i & ".accdb"
     End If
     
 End Function
@@ -176,7 +176,6 @@ Public Function getMinNumber() As Long 'to get Min(OrderID)
     Set conn = New adodb.Connection
     conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;" & _
                             "Data Source=" & GetAddress("O", 1)
-                            '"Data Source=C:\Users\DaTest0254\Documents\2. Access VBA\Julia-202109\sample\Orders_DB.mdb;"
                             
     conn.Open
     Set rs = New adodb.Recordset
@@ -216,9 +215,7 @@ Public Function getCount() As Long
     For i = 1 To NumberofDBs
         Set conn = New adodb.Connection
         conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;" & _
-                                "Data Source=" & GetAddress("O", i)
-                                '"Data Source=C:\Users\DaTest0254\Documents\2. Access VBA\Julia-202109\sample\Orders_DB.mdb;"
-                            
+                                "Data Source=" & GetAddress("O", i)                            
         conn.Open
         Set rs = New adodb.Recordset
         rs.CursorLocation = adUseClient
